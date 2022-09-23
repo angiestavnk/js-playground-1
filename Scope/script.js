@@ -1,6 +1,7 @@
 //SCOPE
-
+//Scope is the current context of execution in which values ans expressions are visible or can be referenced;
 //GLOBAL SCOPE
+
 var globalVar = 'This variable is created in global scope';
 
 function getGlobalVar() {
@@ -16,17 +17,19 @@ getGlobalVarFunc();
 //FUNCTION SCOPE
 
 function getFunctionScope() {
-  const funcVar = 'This variable is created in function scope';
+  var funcVar = "This var variable is created in function scope";
+  const funcConst = 'This const variable is created in function scope';
 
   function getFunctionScopeVar() {
-    console.log(funcVar);
+    console.log(funcConst);
     console.log(globalVar);
   }
 }
 
 // getFunctionScopeVar() // Reference error;
-// console.log(funcVar) // Reference error;
+// console.log(funcConst) // Reference error;
 getFunctionScope();
+// console.log(funcVar) //Reference error
 
 //BLOCK SCOPE
 
